@@ -103,3 +103,33 @@ add_numbers () {
 sum=$(add_numbers 5 3)
 echo "Sum of 5 and 3: $sum"
 
+echo ""
+echo "11. Case Statements"
+
+read -p "Enter a language: " lang
+
+case $lang in 
+	"python")
+		echo "It's high level, general purpose programming language"
+		;;
+	"java")
+		echo "It's high level, class-based, object-oriented programming language"
+		;;
+	*)
+		echo "Unknown language"
+		;;
+esac
+
+
+echo ""
+echo "12. Read from a file"
+
+file="example.txt"
+if [ -e $file ]; then
+	while IFS= read -r line; do
+		echo "Line: $line"
+	done < $file
+else
+	echo "File not found: $file"
+fi
+
